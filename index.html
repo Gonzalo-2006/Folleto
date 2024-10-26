@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaña de Prevención de Contaminación del Aire</title>
+    <style>
+        /* Reset de márgenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo del body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Título principal */
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        /* Secciones de contenido */
+        .section {
+            padding: 20px;
+            margin-bottom: 10px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #e3f2fd;
+        }
+
+        .section h2 {
+            color: #388e3c;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            position: relative;
+        }
+
+        .section h2::before {
+            content: "📌";
+            position: absolute;
+            left: -30px;
+            font-size: 1.4em;
+        }
+
+        .section p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Lista de soluciones */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: "✔️";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Llamada a la acción */
+        .cta {
+            text-align: center;
+            margin: 20px;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2e7d32;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 10px;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .cta a:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Campaña de Prevención: Mejora la Calidad del Aire en Bogotá</h1>
+
+    <div class="section">
+        <h2>Problema: Contaminación del Aire en Bogotá</h2>
+        <p>
+            La contaminación del aire es un desafío constante en zonas de Bogotá, como la estación de La Sevillana. El aire en esta zona es especialmente nocivo debido a la emisión de partículas (PM) provenientes de vehículos diésel y de plantas de procesamiento de residuos.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Fuentes de Contaminación</h2>
+        <p><strong>Vehículos diésel:</strong> Emisiones de partículas y gases contaminantes en el aire.</p>
+        <p><strong>Plantas de procesamiento de residuos:</strong> Manejo y almacenamiento de desechos orgánicos generan olores tóxicos y gases que afectan la salud.</p>
+    </div>
+
+    <div class="section">
+        <h2>Población Afectada</h2>
+        <p>
+            Las personas que viven y trabajan en estas áreas enfrentan problemas de salud respiratoria y otros riesgos debido a la baja calidad del aire.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Soluciones Propuestas</h2>
+        <ul>
+            <li><strong>Monitoreo de la Calidad del Aire:</strong> Implementar sistemas para medir constantemente los niveles de contaminación.</li>
+            <li><strong>Regulación de Emisiones:</strong> Trabajar con autoridades locales para reducir las emisiones de vehículos y plantas industriales.</li>
+            <li><strong>Programas de Concienciación:</strong> Sensibilizar a la comunidad sobre cómo sus acciones impactan el aire que respiramos.</li>
+            <li><strong>Sistemas de Control de Emisiones:</strong> Instalar y mantener tecnologías que reduzcan los gases y olores nocivos en las áreas industriales.</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <p>¡Únete al Cambio!</p>
+        <a href="#">Actúa hoy para mejorar la calidad del aire</a>
+    </div>
+</div>
+
+</body>
+</html>
