@@ -54,11 +54,47 @@
             margin-bottom: 10px;
             border-left: 5px solid #4CAF50;
             border-radius: 5px;
-            background-color: #e3f2fd;
+            color: white; /* Cambiado para que el texto sea legible */
+            position: relative; /* Para el posicionamiento del pseudo-elemento */
+            transition: background-color 0.3s, color 0.3s; /* Para la transición de color */
+        }
+
+        /* Efecto hover */
+        .section:hover {
+            color: #4CAF50; /* Color del texto al hacer hover */
+        }
+
+        .section:hover h2 {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra del texto al hacer hover */
+        }
+
+        /* Estilos para cada sección con fondo diferente */
+        .section.problema {
+            background-image: url('https://img.freepik.com/fotos-premium/contaminacion-aire-agua_915233-416.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section.fuentes {
+            background-image: url('https://www.minambiente.gov.co/wp-content/uploads/2021/06/emisiones.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section.poblacion {
+            background-image: url('https://files.alerta.rcnradio.com/alerta_bogota/public/2020-02/en_ultimo_ano_mas_de_2.000_ciudadanos_murieron_por_mala_calidad_del_aire_en_bogota_2_0.jpg?d..52DDqpiYtQQdawgGKsFyZsAHAWhHs'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section.soluciones {
+            background-image: url('https://www.kienyke.com/sites/default/files/2023-02/contaminacion-aire-bogota-alerta.jpg'); 
+            background-size: cover;
+            background-position: center;
         }
 
         .section h2 {
-            color: #388e3c;
+            color: #fff; /* Cambia el color del texto del título si es necesario */
             margin-bottom: 10px;
             font-size: 1.4em;
             position: relative;
@@ -125,34 +161,115 @@
             background-color: #388e3c;
             transform: scale(1.05);
         }
+
+        /* Estilos del modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1; /* Por encima de otros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* 100% de ancho */
+            height: 100%; /* 100% de alto */
+            overflow: auto; /* Habilitar desplazamiento si es necesario */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto; /* 15% desde arriba y centrado */
+            padding: 20px;
+            border: 1px solid #4CAF50; /* Borde verde */
+            border-radius: 10px; /* Esquinas redondeadas */
+            width: 300px; /* Ancho del modal */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative; /* Para el botón de cierre */
+        }
+
+        .close {
+            color: #4CAF50; /* Color del botón de cierre */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -10px; /* Ajusta la posición vertical */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: darkgreen; /* Color al pasar el ratón */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilos del mensaje del modal */
+        .modal-content p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px; /* Espaciado superior */
+        }
+
+        /* Animación para mostrar el modal */
+        .modal.show {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
+    <script>
+        // Funciones para mostrar y ocultar el modal
+        function showAlert() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "flex"; // Muestra el modal
+            modal.classList.add("show"); // Añade la clase para animación
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none"; // Oculta el modal
+            document.getElementById("myModal").classList.remove("show"); // Quita la clase de animación
+        }
+
+        // Cierra el modal si se hace clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
     <h1>Campaña de Prevención: Mejora la Calidad del Aire en Bogotá</h1>
 
-    <div class="section">
+    <div class="section problema">
         <h2>Problema: Contaminación del Aire en Bogotá</h2>
         <p>
             La contaminación del aire es un desafío constante en zonas de Bogotá, como la estación de La Sevillana. El aire en esta zona es especialmente nocivo debido a la emisión de partículas (PM) provenientes de vehículos diésel y de plantas de procesamiento de residuos.
         </p>
     </div>
 
-    <div class="section">
+    <div class="section fuentes">
         <h2>Fuentes de Contaminación</h2>
         <p><strong>Vehículos diésel:</strong> Emisiones de partículas y gases contaminantes en el aire.</p>
         <p><strong>Plantas de procesamiento de residuos:</strong> Manejo y almacenamiento de desechos orgánicos generan olores tóxicos y gases que afectan la salud.</p>
     </div>
 
-    <div class="section">
+    <div class="section poblacion">
         <h2>Población Afectada</h2>
         <p>
             Las personas que viven y trabajan en estas áreas enfrentan problemas de salud respiratoria y otros riesgos debido a la baja calidad del aire.
         </p>
     </div>
 
-    <div class="section">
+    <div class="section soluciones">
         <h2>Soluciones Propuestas</h2>
         <ul>
             <li><strong>Monitoreo de la Calidad del Aire:</strong> Implementar sistemas para medir constantemente los niveles de contaminación.</li>
@@ -164,9 +281,23 @@
 
     <div class="cta">
         <p>¡Únete al Cambio!</p>
-        <a href="#">Actúa hoy para mejorar la calidad del aire</a>
+        <a href="#" onclick="showAlert(); return false;">Actúa hoy para mejorar la calidad del aire</a>
     </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal();">&times;</span>
+        <p>Gracias por leer</p>
+        <footer>Creadores: 
+            Gonzalo P. Sergio C. 
+            Brian P. Camilo C. 
+            </footer>
+    </div>
+
 </div>
 
 </body>
 </html>
+
